@@ -17,6 +17,10 @@
 		574F2399177788400004F075 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 574F2379177788400004F075 /* Cocoa.framework */; };
 		574F23A1177788400004F075 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 574F239F177788400004F075 /* InfoPlist.strings */; };
 		574F23A4177788400004F075 /* Polaris2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F23A3177788400004F075 /* Polaris2Tests.m */; };
+		574F23B3177799B70004F075 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 574F23B2177799B70004F075 /* Accelerate.framework */; };
+		574F23BD1777A5BC0004F075 /* PLSphere.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F23BC1777A5BC0004F075 /* PLSphere.m */; };
+		574F23C01777A93D0004F075 /* PLVector.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F23BF1777A93D0004F075 /* PLVector.m */; };
+		574F23C31777AF5B0004F075 /* PLRay.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F23C21777AF5B0004F075 /* PLRay.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,13 @@
 		574F23A0177788400004F075 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		574F23A2177788400004F075 /* Polaris2Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Polaris2Tests.h; sourceTree = "<group>"; };
 		574F23A3177788400004F075 /* Polaris2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Polaris2Tests.m; sourceTree = "<group>"; };
+		574F23B2177799B70004F075 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		574F23BB1777A5BC0004F075 /* PLSphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLSphere.h; sourceTree = "<group>"; };
+		574F23BC1777A5BC0004F075 /* PLSphere.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLSphere.m; sourceTree = "<group>"; };
+		574F23BE1777A93D0004F075 /* PLVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLVector.h; sourceTree = "<group>"; };
+		574F23BF1777A93D0004F075 /* PLVector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLVector.m; sourceTree = "<group>"; };
+		574F23C11777AF5B0004F075 /* PLRay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLRay.h; sourceTree = "<group>"; };
+		574F23C21777AF5B0004F075 /* PLRay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLRay.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				574F23B3177799B70004F075 /* Accelerate.framework in Frameworks */,
 				574F237A177788400004F075 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,6 +106,7 @@
 		574F2378177788400004F075 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				574F23B2177799B70004F075 /* Accelerate.framework */,
 				574F2379177788400004F075 /* Cocoa.framework */,
 				574F2397177788400004F075 /* SenTestingKit.framework */,
 				574F237B177788400004F075 /* Other Frameworks */,
@@ -114,6 +127,8 @@
 		574F237F177788400004F075 /* Polaris2 */ = {
 			isa = PBXGroup;
 			children = (
+				574F23BA1777A5AA0004F075 /* Scene */,
+				574F23B417779B820004F075 /* Data */,
 				574F238B177788400004F075 /* PLAppDelegate.h */,
 				574F238C177788400004F075 /* PLAppDelegate.m */,
 				574F238E177788400004F075 /* MainMenu.xib */,
@@ -151,6 +166,26 @@
 				574F239F177788400004F075 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		574F23B417779B820004F075 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				574F23BE1777A93D0004F075 /* PLVector.h */,
+				574F23BF1777A93D0004F075 /* PLVector.m */,
+				574F23C11777AF5B0004F075 /* PLRay.h */,
+				574F23C21777AF5B0004F075 /* PLRay.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		574F23BA1777A5AA0004F075 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				574F23BB1777A5BC0004F075 /* PLSphere.h */,
+				574F23BC1777A5BC0004F075 /* PLSphere.m */,
+			);
+			name = Scene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +299,9 @@
 			files = (
 				574F2386177788400004F075 /* main.m in Sources */,
 				574F238D177788400004F075 /* PLAppDelegate.m in Sources */,
+				574F23BD1777A5BC0004F075 /* PLSphere.m in Sources */,
+				574F23C01777A93D0004F075 /* PLVector.m in Sources */,
+				574F23C31777AF5B0004F075 /* PLRay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

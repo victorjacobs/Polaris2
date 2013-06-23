@@ -7,12 +7,16 @@
 //
 
 #import "PLAppDelegate.h"
+#import "PLVector.h"
 
 @implementation PLAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    PLVector *vec = [[PLVector alloc] initWithX:1 y:2 z:3];
+    PLVector *vec2 = [[PLVector alloc] initWithX:1 y:2 z:3];
+    
+    printf("%f", [vec add:vec2].x);
 }
 
 @end
