@@ -24,6 +24,7 @@
 		574F23C717784C240004F075 /* PLScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F23C617784C240004F075 /* PLScene.m */; };
 		574F23CE17784D8B0004F075 /* PLHit.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F23CD17784D8B0004F075 /* PLHit.m */; };
 		574F23D1177859FB0004F075 /* PLCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F23D0177859FB0004F075 /* PLCamera.m */; };
+		574F23D61778712B0004F075 /* PLDiffuseMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F23D51778712B0004F075 /* PLDiffuseMaterial.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,9 @@
 		574F23CD17784D8B0004F075 /* PLHit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLHit.m; sourceTree = "<group>"; };
 		574F23CF177859FB0004F075 /* PLCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCamera.h; sourceTree = "<group>"; };
 		574F23D0177859FB0004F075 /* PLCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLCamera.m; sourceTree = "<group>"; };
+		574F23D3177870BB0004F075 /* PLMaterial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLMaterial.h; sourceTree = "<group>"; };
+		574F23D41778712B0004F075 /* PLDiffuseMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDiffuseMaterial.h; sourceTree = "<group>"; };
+		574F23D51778712B0004F075 /* PLDiffuseMaterial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDiffuseMaterial.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +198,7 @@
 		574F23BA1777A5AA0004F075 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				574F23D2177870A70004F075 /* Material */,
 				574F23C417784C140004F075 /* Geometry */,
 				574F23C517784C240004F075 /* PLScene.h */,
 				574F23C617784C240004F075 /* PLScene.m */,
@@ -211,6 +216,16 @@
 				574F23CB17784D110004F075 /* PLGeometry.h */,
 			);
 			name = Geometry;
+			sourceTree = "<group>";
+		};
+		574F23D2177870A70004F075 /* Material */ = {
+			isa = PBXGroup;
+			children = (
+				574F23D3177870BB0004F075 /* PLMaterial.h */,
+				574F23D41778712B0004F075 /* PLDiffuseMaterial.h */,
+				574F23D51778712B0004F075 /* PLDiffuseMaterial.m */,
+			);
+			name = Material;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,6 +345,7 @@
 				574F23C717784C240004F075 /* PLScene.m in Sources */,
 				574F23CE17784D8B0004F075 /* PLHit.m in Sources */,
 				574F23D1177859FB0004F075 /* PLCamera.m in Sources */,
+				574F23D61778712B0004F075 /* PLDiffuseMaterial.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +465,7 @@
 		574F23A8177788400004F075 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Polaris2/Polaris2-Prefix.pch";
@@ -461,6 +478,7 @@
 		574F23A9177788400004F075 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Polaris2/Polaris2-Prefix.pch";

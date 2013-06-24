@@ -7,6 +7,8 @@
 //
 
 #import "PLScene.h"
+#import "PLGeometry.h"
+#import "PLHit.h"
 
 @implementation PLScene
 
@@ -15,7 +17,8 @@
     self = [super init];
     
     if (self) {
-        _surfaces = [[NSArray alloc] init];
+        _surfaces = [@[] mutableCopy];
+        _lights = [@[] mutableCopy];
     }
     
     return self;
@@ -23,6 +26,21 @@
 
 - (NSColor *)trace:(PLRay *)ray
 {
+    // TODO move this EPS
+    float eps = 0.1f;
+    
+    PLHit *hit;
+    float minT = INFINITY;
+    PLHit *closestHit;
+    
+    // Brute force tracing
+    for (id geom in _surfaces) {
+        if ((hit = [geom hit:ray t0:eps t1:minT]) != nil) {
+            minT = hit.t;
+            closestHit = hit;
+        }
+    }
+    
     return nil;
 }
 

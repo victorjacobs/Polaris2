@@ -13,9 +13,9 @@
 
 @interface PLSphere : NSObject <PLGeometry>
 
-@property (readonly) PLVector* origin;
+@property (readonly) PLVector *origin;
 @property (readonly) float radius;
 
-- (id)initWithOrigin: (PLVector*)origin andRadius: (float)radius;
+- (id)initWithOrigin:(PLVector *)origin andRadius: (float)radius;
 
 @end

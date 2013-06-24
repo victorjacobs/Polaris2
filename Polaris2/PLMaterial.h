@@ -1,0 +1,17 @@
+//
+//  PLMaterial.h
+//  Polaris2
+//
+//  Created by Victor on 24/06/13.
+//  Copyright (c) 2013 Victor Jacobs. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "PLHit.h"
+#import "PLScene.h"
+
+@protocol PLMaterial <NSObject>
+
+- (NSColor *)getColorForHit:(PLHit *)hit andScene:(PLScene *)scene;
+
+@end

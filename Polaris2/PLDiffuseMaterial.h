@@ -1,5 +1,5 @@
 //
-//  PLGeometry.h
+//  PLDiffuseMaterial.h
 //  Polaris2
 //
 //  Created by Victor on 24/06/13.
@@ -7,13 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PLHit.h"
 #import "PLMaterial.h"
 
-@protocol PLGeometry <NSObject>
+@interface PLDiffuseMaterial : NSObject <PLMaterial>
 
-@property (readonly, nonatomic) PLMaterial *material;
+@property (nonatomic, readonly) NSColor *color;
 
-- (PLHit *)hit:(PLRay *)ray t0:(float)t0 t1:(float)t1;
+- (id)initWithColor:(NSColor *)color;
 
 @end

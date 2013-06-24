@@ -17,6 +17,6 @@
 @property (readonly, nonatomic) PLVector *normal;
 @property (readonly) float t;
 
-- (id)initWithRay:(PLRay*)ray andLocation:(PLVector*)where andNormal:(PLVector*)normal andT:(float)t;
+- (id)initWithRay:(PLRay *)ray andLocation:(PLVector *)where andNormal:(PLVector *)normal andT:(float)t;
 
 @end

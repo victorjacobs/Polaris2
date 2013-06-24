@@ -11,9 +11,9 @@
 
 @interface PLRay : NSObject
 
-@property (readonly, nonatomic) PLVector* origin;
-@property (readonly, nonatomic) PLVector* direction;
+@property (readonly, nonatomic) PLVector *origin;
+@property (readonly, nonatomic) PLVector *direction;
 
-- (id) initWithOrigin:(PLVector*)origin andDirection:(PLVector*)direction;
+- (id) initWithOrigin:(PLVector *)origin andDirection:(PLVector *)direction;
 
 @end

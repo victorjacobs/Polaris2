@@ -12,9 +12,10 @@
 
 @interface PLScene : NSObject
 
-@property (nonatomic, readonly) NSArray *surfaces;
+@property (nonatomic, readonly) NSMutableArray *surfaces;
+@property (nonatomic, readonly) NSMutableArray *lights;
 @property (nonatomic, readonly) PLCamera *camera;
 
-- (NSColor*)trace: (PLRay*)ray;
+- (NSColor *)trace:(PLRay *)ray;
 
 @end

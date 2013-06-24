@@ -24,7 +24,7 @@
     return self;
 }
 
-- (PLHit*)hit:(PLRay *)ray t0:(float)t0 t1:(float)t1
+- (PLHit *)hit:(PLRay *)ray t0:(float)t0 t1:(float)t1
 {
     float A = [ray.direction dotProduct:ray.direction];
     float B = [[[ray.origin subtract:self.origin] multiply:2] dotProduct:ray.direction];
@@ -33,7 +33,7 @@
     
     float disc = B * B - 4 * A * C;
     
-    if (disc < 0) return NO;
+    if (disc < 0) return nil;
     
     float tPlus = (-B + sqrt(disc)) / (2 * A);
     float tMin = (-B - sqrt(disc)) / (2 * A);
