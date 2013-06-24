@@ -26,7 +26,7 @@
     return self;
 }
 
-- (BOOL)hit:(PLRay *)ray t0:(float)t0 t1:(float)t1
+- (PLHit*)hit:(PLRay *)ray t0:(float)t0 t1:(float)t1
 {
     float A = [ray.direction dotProduct:ray.direction];
     float B = [[[ray.origin subtract:self.origin] multiply:2] dotProduct:ray.direction];
@@ -46,17 +46,18 @@
     } else if (tPlus > t0 && tPlus < t1) {
         t = tPlus;
     } else {
-        return NO;
+        return nil;
     }
     
     // Calculate hit point
-    //Vector3f where = ray.getOrigin().sum(ray.getDirection().multiply(t));
+    PLVector *where = [ray.origin add:[ray.direction multiply:t]];
     
     // Normal vector
-    //Vector3f normal = where.minus(center).normalize();
+    PLVector *normal = [[where subtract:origin] normalize];
     
-    //return new Hit(ray, this, where, normal, getLocalCoordinateFor(new Point3f(where)), t);
-    return YES;
+    PLHit *hit = [[PLHit alloc] initWithRay:ray andLocation:where andNormal:normal andT:t];
+    
+    return hit;
 }
 
 @end

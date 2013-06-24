@@ -21,6 +21,8 @@
 		574F23BD1777A5BC0004F075 /* PLSphere.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F23BC1777A5BC0004F075 /* PLSphere.m */; };
 		574F23C01777A93D0004F075 /* PLVector.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F23BF1777A93D0004F075 /* PLVector.m */; };
 		574F23C31777AF5B0004F075 /* PLRay.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F23C21777AF5B0004F075 /* PLRay.m */; };
+		574F23C717784C240004F075 /* PLScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F23C617784C240004F075 /* PLScene.m */; };
+		574F23CE17784D8B0004F075 /* PLHit.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F23CD17784D8B0004F075 /* PLHit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,11 @@
 		574F23BF1777A93D0004F075 /* PLVector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLVector.m; sourceTree = "<group>"; };
 		574F23C11777AF5B0004F075 /* PLRay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLRay.h; sourceTree = "<group>"; };
 		574F23C21777AF5B0004F075 /* PLRay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLRay.m; sourceTree = "<group>"; };
+		574F23C517784C240004F075 /* PLScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLScene.h; sourceTree = "<group>"; };
+		574F23C617784C240004F075 /* PLScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLScene.m; sourceTree = "<group>"; };
+		574F23CB17784D110004F075 /* PLGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLGeometry.h; sourceTree = "<group>"; };
+		574F23CC17784D8B0004F075 /* PLHit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLHit.h; sourceTree = "<group>"; };
+		574F23CD17784D8B0004F075 /* PLHit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLHit.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +182,8 @@
 				574F23BF1777A93D0004F075 /* PLVector.m */,
 				574F23C11777AF5B0004F075 /* PLRay.h */,
 				574F23C21777AF5B0004F075 /* PLRay.m */,
+				574F23CC17784D8B0004F075 /* PLHit.h */,
+				574F23CD17784D8B0004F075 /* PLHit.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -182,10 +191,21 @@
 		574F23BA1777A5AA0004F075 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				574F23BB1777A5BC0004F075 /* PLSphere.h */,
-				574F23BC1777A5BC0004F075 /* PLSphere.m */,
+				574F23C417784C140004F075 /* Geometry */,
+				574F23C517784C240004F075 /* PLScene.h */,
+				574F23C617784C240004F075 /* PLScene.m */,
 			);
 			name = Scene;
+			sourceTree = "<group>";
+		};
+		574F23C417784C140004F075 /* Geometry */ = {
+			isa = PBXGroup;
+			children = (
+				574F23BB1777A5BC0004F075 /* PLSphere.h */,
+				574F23BC1777A5BC0004F075 /* PLSphere.m */,
+				574F23CB17784D110004F075 /* PLGeometry.h */,
+			);
+			name = Geometry;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +322,8 @@
 				574F23BD1777A5BC0004F075 /* PLSphere.m in Sources */,
 				574F23C01777A93D0004F075 /* PLVector.m in Sources */,
 				574F23C31777AF5B0004F075 /* PLRay.m in Sources */,
+				574F23C717784C240004F075 /* PLScene.m in Sources */,
+				574F23CE17784D8B0004F075 /* PLHit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

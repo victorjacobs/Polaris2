@@ -68,6 +68,17 @@
     return [[PLVector alloc] initFromArray:ret];
 }
 
+- (PLVector *)normalize
+{
+    float *ary = [self toArray];
+    float sum;
+    sum = ary[0] + ary[1] + ary[2];
+    ary[0] /= sum;
+    ary[1] /= sum;
+    ary[2] /= sum;
+    return [[PLVector alloc] initFromArray:ary];
+}
+
 - (float[3])toArray
 {
     return (float[3]){x, y, z};

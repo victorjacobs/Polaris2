@@ -21,6 +21,7 @@
 - (PLVector*)subtract:(PLVector*)other;
 - (PLVector*)multiply:(int)mult;
 - (float)dotProduct:(PLVector*)other;
+- (PLVector*)normalize;
 
 - (float[3])toArray;
 
