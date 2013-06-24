@@ -33,6 +33,13 @@
     return [self initWithX:ary[0] y:ary[1] z:ary[2]];
 }
 
+- (float[3])toArray
+{
+    return (float[3]){x, y, z};
+}
+
+#pragma mark Operations
+
 - (float)dotProduct:(PLVector *)other
 {
     return cblas_sdot(3, [self toArray], 1, [other toArray], 1);
@@ -79,9 +86,12 @@
     return [[PLVector alloc] initFromArray:ary];
 }
 
-- (float[3])toArray
+- (PLVector *)crossProduct:(PLVector *)other
 {
-    return (float[3]){x, y, z};
+    double *out = (double*)[other toArray];
+    catlas_daxpby(3, 1, (double *)[self toArray], 1, 1, out, 1);
+    
+    return [[PLVector alloc] initFromArray:(float*)out];
 }
 
 @end

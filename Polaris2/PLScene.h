@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "PLRay.h"
+#import "PLCamera.h"
 
 @interface PLScene : NSObject
 
 @property (nonatomic, readonly) NSArray *surfaces;
+@property (nonatomic, readonly) PLCamera *camera;
 
 - (NSColor*)trace: (PLRay*)ray;
 

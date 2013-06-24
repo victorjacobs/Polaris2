@@ -23,6 +23,7 @@
 		574F23C31777AF5B0004F075 /* PLRay.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F23C21777AF5B0004F075 /* PLRay.m */; };
 		574F23C717784C240004F075 /* PLScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F23C617784C240004F075 /* PLScene.m */; };
 		574F23CE17784D8B0004F075 /* PLHit.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F23CD17784D8B0004F075 /* PLHit.m */; };
+		574F23D1177859FB0004F075 /* PLCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F23D0177859FB0004F075 /* PLCamera.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		574F23CB17784D110004F075 /* PLGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLGeometry.h; sourceTree = "<group>"; };
 		574F23CC17784D8B0004F075 /* PLHit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLHit.h; sourceTree = "<group>"; };
 		574F23CD17784D8B0004F075 /* PLHit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLHit.m; sourceTree = "<group>"; };
+		574F23CF177859FB0004F075 /* PLCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCamera.h; sourceTree = "<group>"; };
+		574F23D0177859FB0004F075 /* PLCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLCamera.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +197,8 @@
 				574F23C417784C140004F075 /* Geometry */,
 				574F23C517784C240004F075 /* PLScene.h */,
 				574F23C617784C240004F075 /* PLScene.m */,
+				574F23CF177859FB0004F075 /* PLCamera.h */,
+				574F23D0177859FB0004F075 /* PLCamera.m */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -324,6 +329,7 @@
 				574F23C31777AF5B0004F075 /* PLRay.m in Sources */,
 				574F23C717784C240004F075 /* PLScene.m in Sources */,
 				574F23CE17784D8B0004F075 /* PLHit.m in Sources */,
+				574F23D1177859FB0004F075 /* PLCamera.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
