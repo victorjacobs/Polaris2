@@ -11,18 +11,14 @@
 
 @implementation PLVector
 
-@synthesize x;
-@synthesize y;
-@synthesize z;
-
-- (id)initWithX:(float)ix y:(float)iy z:(float)iz
+- (id)initWithX:(float)x y:(float)y z:(float)z
 {
     self = [super init];
     
     if (self) {
-        x = ix;
-        y = iy;
-        z = iz;
+        _x = x;
+        _y = y;
+        _z = z;
     }
     
     return self;
@@ -35,7 +31,7 @@
 
 - (float[3])toArray
 {
-    return (float[3]){x, y, z};
+    return (float[3]){_x, _y, _z};
 }
 
 #pragma mark Operations

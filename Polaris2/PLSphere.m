@@ -11,16 +11,14 @@
 
 @implementation PLSphere
 
-@synthesize origin;
-@synthesize radius;
 
-- (id)initWithOrigin:(PLVector *)or andRadius:(float)rad
+- (id)initWithOrigin:(PLVector *)origin andRadius:(float)radius
 {
     self = [super init];
     
     if (self) {
-        origin = or;
-        radius = rad;
+        _origin = origin;
+        _radius = radius;
     }
     
     return self;
@@ -30,8 +28,8 @@
 {
     float A = [ray.direction dotProduct:ray.direction];
     float B = [[[ray.origin subtract:self.origin] multiply:2] dotProduct:ray.direction];
-    PLVector *C1 = [ray.origin subtract:origin];
-    float C = [C1 dotProduct:C1] - radius * radius;
+    PLVector *C1 = [ray.origin subtract:_origin];
+    float C = [C1 dotProduct:C1] - _radius * _radius;
     
     float disc = B * B - 4 * A * C;
     
@@ -53,7 +51,7 @@
     PLVector *where = [ray.origin add:[ray.direction multiply:t]];
     
     // Normal vector
-    PLVector *normal = [[where subtract:origin] normalize];
+    PLVector *normal = [[where subtract:_origin] normalize];
     
     PLHit *hit = [[PLHit alloc] initWithRay:ray andLocation:where andNormal:normal andT:t];
     

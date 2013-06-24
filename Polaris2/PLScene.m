@@ -10,14 +10,12 @@
 
 @implementation PLScene
 
-@synthesize surfaces;
-
 - (id) init
 {
     self = [super init];
     
     if (self) {
-        surfaces = [[NSArray alloc] init];
+        _surfaces = [[NSArray alloc] init];
     }
     
     return self;

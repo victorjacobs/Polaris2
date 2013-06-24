@@ -10,20 +10,15 @@
 
 @implementation PLHit
 
-@synthesize ray;
-@synthesize location;
-@synthesize normal;
-@synthesize t;
-
-- (id)initWithRay:(PLRay *)r andLocation:(PLVector *)where andNormal:(PLVector *)nor andT:(float)ti
+- (id)initWithRay:(PLRay *)ray andLocation:(PLVector *)location andNormal:(PLVector *)normal andT:(float)t
 {
     self = [super init];
     
     if (self) {
-        ray = r;
-        location = where;
-        normal = nor;
-        t = ti;
+        _ray = ray;
+        _location = location;
+        _normal = normal;
+        _t = t;
     }
     
     return self;

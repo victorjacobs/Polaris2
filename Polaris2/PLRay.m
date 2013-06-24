@@ -10,16 +10,13 @@
 
 @implementation PLRay
 
-@synthesize direction;
-@synthesize origin;
-
-- (id)initWithOrigin:(PLVector *)or andDirection:(PLVector *)dir
+- (id)initWithOrigin:(PLVector *)origin andDirection:(PLVector *)direction
 {
     self = [super init];
     
     if (self) {
-        direction = dir;
-        origin = or;
+        _direction = direction;
+        _origin = origin;
     }
     
     return self;
