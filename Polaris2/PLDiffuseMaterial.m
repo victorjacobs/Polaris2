@@ -7,6 +7,8 @@
 //
 
 #import "PLDiffuseMaterial.h"
+#import "PLLight.h"
+#import "NSColor+ColorExtensions.h"
 
 @implementation PLDiffuseMaterial
 
@@ -21,7 +23,20 @@
 
 - (NSColor *)getColorForHit:(PLHit *)hit andScene:(PLScene *)scene
 {
-    return nil;
+    // Fetch background color
+    NSColor *resultingColor = [scene.backgroundColor copy];
+    CGFloat dotProduct;
+    
+    NSColor *tempColor = nil;
+    
+    // Loop over all lights
+    for (id <PLLight> light in scene.lights) {
+        dotProduct = [hit.normal dotProduct:[light rayToPoint:hit.location].direction];
+        
+        
+    }
+    
+    return resultingColor;
 }
 
 @end

@@ -15,15 +15,22 @@
 
 @synthesize intensity = _intensity;
 @synthesize origin = _origin;
+@synthesize color = _color;
 
-- (id)initWithOrigin:(PLVector *)origin andIntensity:(float)intensity
+- (id)initWithOrigin:(PLVector *)origin andIntensity:(float)intensity andColor:(NSColor *)color;
 {
     if (self = [super init]) {
         _origin = origin;
         _intensity = intensity;
+        _color = color;
     }
     
     return self;
+}
+
+- (id)initWithOrigin:(PLVector *)origin andIntensity:(float)intensity
+{
+    return [self initWithOrigin:origin andIntensity:intensity andColor:[NSColor whiteColor]];
 }
 
 - (PLRay *)rayToPoint:(PLVector *)point

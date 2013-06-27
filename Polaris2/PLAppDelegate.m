@@ -31,6 +31,11 @@
             
         }
     }
+    
+    PLVector *vec1 = [[PLVector alloc] initWithX:1 y:1 z:1];
+    PLVector *vec2 = [[PLVector alloc] initWithX:1 y:1 z:1];
+
+    printf("%f", [vec1 crossProduct:vec2].x);   // Cross product werkt nog niet
 }
 
 @end

@@ -24,6 +24,16 @@
     return self;
 }
 
+- (id)initWithCamera:(PLCamera *)camera andBackgroundColor:(NSColor *)backgroundColor
+{
+    if (self = [self init]) {
+        _camera = camera;
+        _backgroundColor = backgroundColor;
+    }
+    
+    return self;
+}
+
 - (NSColor *)trace:(PLRay *)ray
 {
     // TODO move this EPS

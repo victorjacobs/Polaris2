@@ -16,7 +16,9 @@
 
 @property (readonly, nonatomic) float intensity;
 @property (readonly, nonatomic) PLVector *origin;
+@property (readonly, nonatomic) NSColor *color;
 
+- (id)initWithOrigin:(PLVector *)origin andIntensity:(float)intensity andColor:(NSColor *)color;
 - (id)initWithOrigin:(PLVector *)origin andIntensity:(float)intensity;
 - (PLRay *)rayToPoint:(PLVector *)point;
 

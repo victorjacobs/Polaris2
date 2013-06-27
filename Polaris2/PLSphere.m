@@ -29,7 +29,7 @@
 - (PLHit *)hit:(PLRay *)ray t0:(float)t0 t1:(float)t1
 {
     float A = [ray.direction dotProduct:ray.direction];
-    float B = [[[ray.origin subtract:self.origin] multiply:2] dotProduct:ray.direction];
+    float B = [[[ray.origin subtract:_origin] multiply:2] dotProduct:ray.direction];
     PLVector *C1 = [ray.origin subtract:_origin];
     float C = [C1 dotProduct:C1] - _radius * _radius;
     

@@ -7,6 +7,7 @@
 //
 
 #import "PLRay.h"
+#import "PLVector.h"
 
 @implementation PLRay
 
@@ -15,7 +16,7 @@
     self = [super init];
     
     if (self) {
-        _direction = direction;
+        _direction = [direction normalize];
         _origin = origin;
     }
     

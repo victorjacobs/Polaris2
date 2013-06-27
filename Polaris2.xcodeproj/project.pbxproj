@@ -26,6 +26,7 @@
 		574F23D1177859FB0004F075 /* PLCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F23D0177859FB0004F075 /* PLCamera.m */; };
 		574F23D61778712B0004F075 /* PLDiffuseMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F23D51778712B0004F075 /* PLDiffuseMaterial.m */; };
 		57BAC3F7177BB98000987AD5 /* PLPointLight.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BAC3F6177BB98000987AD5 /* PLPointLight.m */; };
+		57BAC3FA177C4DF500987AD5 /* NSColor+ColorExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BAC3F9177C4DF500987AD5 /* NSColor+ColorExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,8 @@
 		57BAC3F3177BB92200987AD5 /* PLLight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLLight.h; sourceTree = "<group>"; };
 		57BAC3F5177BB98000987AD5 /* PLPointLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPointLight.h; sourceTree = "<group>"; };
 		57BAC3F6177BB98000987AD5 /* PLPointLight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLPointLight.m; sourceTree = "<group>"; };
+		57BAC3F8177C4DF500987AD5 /* NSColor+ColorExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+ColorExtensions.h"; sourceTree = "<group>"; };
+		57BAC3F9177C4DF500987AD5 /* NSColor+ColorExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+ColorExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +198,8 @@
 				574F23C21777AF5B0004F075 /* PLRay.m */,
 				574F23CC17784D8B0004F075 /* PLHit.h */,
 				574F23CD17784D8B0004F075 /* PLHit.m */,
+				57BAC3F8177C4DF500987AD5 /* NSColor+ColorExtensions.h */,
+				57BAC3F9177C4DF500987AD5 /* NSColor+ColorExtensions.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -362,6 +367,7 @@
 				574F23D1177859FB0004F075 /* PLCamera.m in Sources */,
 				574F23D61778712B0004F075 /* PLDiffuseMaterial.m in Sources */,
 				57BAC3F7177BB98000987AD5 /* PLPointLight.m in Sources */,
+				57BAC3FA177C4DF500987AD5 /* NSColor+ColorExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +487,7 @@
 		574F23A8177788400004F075 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
 				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -494,6 +501,7 @@
 		574F23A9177788400004F075 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
 				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
