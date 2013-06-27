@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PLHit.h"
-#import "PLMaterial.h"
+
+// Forward declare these
+@protocol PLMaterial;
+@class PLHit;
 
 @protocol PLGeometry <NSObject>
 
-@property (readonly, nonatomic) PLMaterial *material;
+@property (readonly, nonatomic) id <PLMaterial> material;
 
 - (PLHit *)hit:(PLRay *)ray t0:(float)t0 t1:(float)t1;
 

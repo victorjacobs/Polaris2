@@ -31,7 +31,7 @@
     
     PLHit *hit;
     float minT = INFINITY;
-    PLHit *closestHit;
+    PLHit *closestHit = nil;
     
     // Brute force tracing
     for (id geom in _surfaces) {
@@ -41,7 +41,12 @@
         }
     }
     
-    return nil;
+    if (closestHit == nil) {
+        // TODO return background color
+        return [NSColor blackColor];
+    } else {
+        return [closestHit getColorForScene:self];
+    }
 }
 
 @end

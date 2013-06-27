@@ -8,9 +8,11 @@
 
 #import "PLSphere.h"
 #import "PLVector.h"
+#import "PLHit.h"
 
 @implementation PLSphere
 
+@synthesize material = _material;
 
 - (id)initWithOrigin:(PLVector *)origin andRadius:(float)radius
 {
@@ -53,7 +55,7 @@
     // Normal vector
     PLVector *normal = [[where subtract:_origin] normalize];
     
-    PLHit *hit = [[PLHit alloc] initWithRay:ray andLocation:where andNormal:normal andT:t];
+    PLHit *hit = [[PLHit alloc] initWithRay:ray andLocation:where andNormal:normal andT:t andGeometry:self];
     
     return hit;
 }

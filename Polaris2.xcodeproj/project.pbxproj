@@ -25,6 +25,7 @@
 		574F23CE17784D8B0004F075 /* PLHit.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F23CD17784D8B0004F075 /* PLHit.m */; };
 		574F23D1177859FB0004F075 /* PLCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F23D0177859FB0004F075 /* PLCamera.m */; };
 		574F23D61778712B0004F075 /* PLDiffuseMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F23D51778712B0004F075 /* PLDiffuseMaterial.m */; };
+		57BAC3F7177BB98000987AD5 /* PLPointLight.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BAC3F6177BB98000987AD5 /* PLPointLight.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +67,6 @@
 		574F23C21777AF5B0004F075 /* PLRay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLRay.m; sourceTree = "<group>"; };
 		574F23C517784C240004F075 /* PLScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLScene.h; sourceTree = "<group>"; };
 		574F23C617784C240004F075 /* PLScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLScene.m; sourceTree = "<group>"; };
-		574F23CB17784D110004F075 /* PLGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLGeometry.h; sourceTree = "<group>"; };
 		574F23CC17784D8B0004F075 /* PLHit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLHit.h; sourceTree = "<group>"; };
 		574F23CD17784D8B0004F075 /* PLHit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLHit.m; sourceTree = "<group>"; };
 		574F23CF177859FB0004F075 /* PLCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCamera.h; sourceTree = "<group>"; };
@@ -74,6 +74,10 @@
 		574F23D3177870BB0004F075 /* PLMaterial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLMaterial.h; sourceTree = "<group>"; };
 		574F23D41778712B0004F075 /* PLDiffuseMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDiffuseMaterial.h; sourceTree = "<group>"; };
 		574F23D51778712B0004F075 /* PLDiffuseMaterial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDiffuseMaterial.m; sourceTree = "<group>"; };
+		574F23DB1778761C0004F075 /* PLGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLGeometry.h; sourceTree = "<group>"; };
+		57BAC3F3177BB92200987AD5 /* PLLight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLLight.h; sourceTree = "<group>"; };
+		57BAC3F5177BB98000987AD5 /* PLPointLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPointLight.h; sourceTree = "<group>"; };
+		57BAC3F6177BB98000987AD5 /* PLPointLight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLPointLight.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +202,7 @@
 		574F23BA1777A5AA0004F075 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				57BAC3F4177BB97100987AD5 /* Light */,
 				574F23D2177870A70004F075 /* Material */,
 				574F23C417784C140004F075 /* Geometry */,
 				574F23C517784C240004F075 /* PLScene.h */,
@@ -213,7 +218,7 @@
 			children = (
 				574F23BB1777A5BC0004F075 /* PLSphere.h */,
 				574F23BC1777A5BC0004F075 /* PLSphere.m */,
-				574F23CB17784D110004F075 /* PLGeometry.h */,
+				574F23DB1778761C0004F075 /* PLGeometry.h */,
 			);
 			name = Geometry;
 			sourceTree = "<group>";
@@ -226,6 +231,16 @@
 				574F23D51778712B0004F075 /* PLDiffuseMaterial.m */,
 			);
 			name = Material;
+			sourceTree = "<group>";
+		};
+		57BAC3F4177BB97100987AD5 /* Light */ = {
+			isa = PBXGroup;
+			children = (
+				57BAC3F3177BB92200987AD5 /* PLLight.h */,
+				57BAC3F5177BB98000987AD5 /* PLPointLight.h */,
+				57BAC3F6177BB98000987AD5 /* PLPointLight.m */,
+			);
+			name = Light;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,6 +361,7 @@
 				574F23CE17784D8B0004F075 /* PLHit.m in Sources */,
 				574F23D1177859FB0004F075 /* PLCamera.m in Sources */,
 				574F23D61778712B0004F075 /* PLDiffuseMaterial.m in Sources */,
+				57BAC3F7177BB98000987AD5 /* PLPointLight.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,6 +553,7 @@
 				574F23A9177788400004F075 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		574F23AA177788400004F075 /* Build configuration list for PBXNativeTarget "Polaris2Tests" */ = {
 			isa = XCConfigurationList;
@@ -545,6 +562,7 @@
 				574F23AC177788400004F075 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PLVector.h"
+
+@class PLVector;
 
 @interface PLRay : NSObject
 
