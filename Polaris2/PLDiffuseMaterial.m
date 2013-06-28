@@ -32,11 +32,13 @@
     // Loop over all lights
     for (id <PLLight> light in scene.lights) {
         dotProduct = [hit.normal dotProduct:[light rayToPoint:hit.location].direction];
+        dotProduct = MAX(0, dotProduct);
         
-        
+        tempColor = [(NSColor *)[light.color copy] multiplyWithFloat:(light.intensity * dotProduct)];
+        resultingColor = [resultingColor sum:tempColor];
     }
     
-    return resultingColor;
+    return [resultingColor multiplyWithColor:_color];
 }
 
 @end

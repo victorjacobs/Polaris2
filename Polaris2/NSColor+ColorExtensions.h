@@ -14,6 +14,7 @@
 + (NSColor *)colorFromArray:(CGFloat *)ary;
 
 - (NSColor *)sum:(NSColor *)other;
-- (NSColor *)multiply:(float)mult;
+- (NSColor *)multiplyWithFloat:(float)mult;
+- (NSColor *)multiplyWithColor:(NSColor *)mult;
 
 @end

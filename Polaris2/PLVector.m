@@ -5,6 +5,7 @@
 //  Created by Victor on 24/06/13.
 //  Copyright (c) 2013 Victor Jacobs. All rights reserved.
 //
+//  TODO: maybe normalize by default?
 
 #import "PLVector.h"
 #import <Accelerate/Accelerate.h>
@@ -43,7 +44,8 @@
 
 - (PLVector *)add:(PLVector *)other
 {
-    float *ret = [self toArray];
+    float ret[3] = {_x, _y, _z};
+    
     ret[0] += other.x;
     ret[1] += other.y;
     ret[2] += other.z;
@@ -53,7 +55,8 @@
 
 - (PLVector *)subtract:(PLVector *)other
 {
-    float *ret = [self toArray];
+    float ret[3] = {_x, _y, _z};
+    
     ret[0] -= other.x;
     ret[1] -= other.y;
     ret[2] -= other.z;
@@ -62,7 +65,7 @@
 }
 
 - (PLVector *)multiply:(int)mult {
-    float *ret = [self toArray];
+    float ret[3] = {_x, _y, _z};
     
     ret[0] *= mult;
     ret[1] *= mult;
@@ -73,21 +76,37 @@
 
 - (PLVector *)normalize
 {
-    float *ary = [self toArray];
+    float ary[3] = {_x, _y, _z};    // TODO why not float ary[] = [self toArray]
     float sum;
+    
     sum = ary[0] + ary[1] + ary[2];
+    
     ary[0] /= sum;
     ary[1] /= sum;
     ary[2] /= sum;
+    
     return [[PLVector alloc] initFromArray:ary];
+}
+
+- (PLVector *)negate
+{
+    return [[PLVector alloc] initWithX:-_x y:-_y z:-_z];
+}
+
+- (PLVector *)sum:(PLVector *)other
+{
+    return [[PLVector alloc] initWithX:_x+other.x y:_y+other.y z:_z+other.z];
 }
 
 - (PLVector *)crossProduct:(PLVector *)other
 {
-    double *out = (double*)[other toArray];
-    catlas_daxpby(3, 1, (double *)[self toArray], 1, 1, out, 1);
+    float res[3] = {other.x, other.y, other.z};
     
-    return [[PLVector alloc] initFromArray:(float*)out];
+    int stride = 1;   // TODO voidpointers = mind full of fuck
+    
+    catlas_caxpby(3, &stride, [self toArray], 1, &stride, res, 1);
+    
+    return [[PLVector alloc] initFromArray:res];
 }
 
 @end

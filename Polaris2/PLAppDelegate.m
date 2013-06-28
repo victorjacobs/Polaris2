@@ -12,6 +12,7 @@
 #import "PLVector.h"
 #import "PLPointLight.h"
 #import "PLRay.h"
+#import "PLCamera.h"
 
 @implementation PLAppDelegate
 
@@ -25,17 +26,16 @@
     
     // Render loop, will move this somewhere else in the future
     PLRay *ray;
+    NSColor *color;
     
     for (int x = 0; x < 100; x++) {
         for (int y = 0; y < 100; y++) {
+            ray = [scene.camera rayToPixelX:x y:y];
+            color = [scene trace:ray];
             
+            NSLog(@"%@", [color redComponent]);
         }
     }
-    
-    PLVector *vec1 = [[PLVector alloc] initWithX:1 y:1 z:1];
-    PLVector *vec2 = [[PLVector alloc] initWithX:1 y:1 z:1];
-
-    printf("%f", [vec1 crossProduct:vec2].x);   // Cross product werkt nog niet
 }
 
 @end

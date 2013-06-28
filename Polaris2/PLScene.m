@@ -44,7 +44,7 @@
     PLHit *closestHit = nil;
     
     // Brute force tracing
-    for (id geom in _surfaces) {
+    for (id<PLGeometry> geom in _surfaces) {
         if ((hit = [geom hit:ray t0:eps t1:minT]) != nil) {
             minT = hit.t;
             closestHit = hit;

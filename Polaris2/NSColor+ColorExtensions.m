@@ -32,7 +32,7 @@
     return [NSColor colorFromArray:resultingColor];
 }
 
-- (NSColor *)multiply:(float)mult
+- (NSColor *)multiplyWithFloat:(float)mult
 {
     CGFloat *resultingColor = NULL;
     [self getComponents:resultingColor];
@@ -40,6 +40,18 @@
     resultingColor[0] *= mult;
     resultingColor[1] *= mult;
     resultingColor[2] *= mult;
+    
+    return [NSColor colorFromArray:resultingColor];
+}
+
+- (NSColor *)multiplyWithColor:(NSColor *)mult
+{
+    CGFloat *resultingColor = NULL;
+    [self getComponents:resultingColor];
+    
+    resultingColor[0] *= [mult redComponent];
+    resultingColor[1] *= [mult greenComponent];
+    resultingColor[2] *= [mult blueComponent];
     
     return [NSColor colorFromArray:resultingColor];
 }

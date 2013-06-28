@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class PLVector;
+@class PLRay;
 
 @interface PLCamera : NSObject
 
@@ -17,5 +18,10 @@
 @property (nonatomic, readonly) PLVector *gaze;
 @property (nonatomic, readonly) float fov;
 
+@property (nonatomic, readonly) PLVector *u;
+@property (nonatomic, readonly) PLVector *v;
+@property (nonatomic, readonly) PLVector *w;
+
+- (PLRay *)rayToPixelX:(int)x y:(int)y;
 
 @end
