@@ -12,7 +12,7 @@
 
 + (NSColor *)colorWithRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue
 {
-    return [NSColor colorWithCalibratedRed:red green:green blue:blue alpha:1];
+    return [[NSColor colorWithDeviceRed:red green:green blue:blue alpha:1] colorUsingColorSpace:nil];
 }
 
 + (NSColor *)colorFromArray:(CGFloat *)ary
@@ -22,19 +22,19 @@
 
 - (NSColor *)sum:(NSColor *)other
 {
-    CGFloat *resultingColor = NULL;
+    CGFloat resultingColor[3];
     [self getComponents:resultingColor];
     
     resultingColor[0] += [other redComponent];
     resultingColor[1] += [other greenComponent];
-    resultingColor[2] += [other greenComponent];
+    resultingColor[2] += [other blueComponent];
     
     return [NSColor colorFromArray:resultingColor];
 }
 
 - (NSColor *)multiplyWithFloat:(float)mult
 {
-    CGFloat *resultingColor = NULL;
+    CGFloat resultingColor[3];
     [self getComponents:resultingColor];
     
     resultingColor[0] *= mult;
@@ -46,7 +46,7 @@
 
 - (NSColor *)multiplyWithColor:(NSColor *)mult
 {
-    CGFloat *resultingColor = NULL;
+    CGFloat resultingColor[3];
     [self getComponents:resultingColor];
     
     resultingColor[0] *= [mult redComponent];

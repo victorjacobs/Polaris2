@@ -20,9 +20,11 @@
 {
     NSLog(@"Testing some stuff and things");
     
-    PLScene *scene = [[PLScene alloc] init];
+    PLCamera *camera = [[PLCamera alloc] initWithPosition:[[PLVector alloc] initWithX:0 y:0 z:0] andUp:[[PLVector alloc] initWithX:0 y:0 z:1] andGaze:[[PLVector alloc] initWithX:1 y:0 z:0] andFov:60];
+    
+    PLScene *scene = [[PLScene alloc] initWithCamera:camera andBackgroundColor:[NSColor blackColor]];
     [scene.lights addObject:[[PLPointLight alloc] initWithOrigin:[[PLVector alloc] initWithX:0 y:1 z:0] andIntensity:0.7f]];
-    [scene.surfaces addObject:[[PLSphere alloc] initWithOrigin:[[PLVector alloc] initWithX:0 y:0 z:0] andRadius:1]];
+    [scene.surfaces addObject:[[PLSphere alloc] initWithOrigin:[[PLVector alloc] initWithX:0 y:2 z:0] andRadius:1]];
     
     // Render loop, will move this somewhere else in the future
     PLRay *ray;
@@ -33,7 +35,7 @@
             ray = [scene.camera rayToPixelX:x y:y];
             color = [scene trace:ray];
             
-            NSLog(@"%@", [color redComponent]);
+            NSLog(@"%f", [color redComponent]);
         }
     }
 }

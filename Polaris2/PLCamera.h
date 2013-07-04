@@ -22,6 +22,7 @@
 @property (nonatomic, readonly) PLVector *v;
 @property (nonatomic, readonly) PLVector *w;
 
+- (id)initWithPosition:(PLVector *)position andUp:(PLVector *)up andGaze:(PLVector *)gaze andFov:(float)fov;
 - (PLRay *)rayToPixelX:(int)x y:(int)y;
 
 @end

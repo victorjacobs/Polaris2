@@ -13,6 +13,18 @@
 
 @implementation PLCamera
 
+- (id)initWithPosition:(PLVector *)position andUp:(PLVector *)up andGaze:(PLVector *)gaze andFov:(float)fov
+{
+    if (self = [super init]) {
+        _position = position;
+        _up = up;
+        _gaze = gaze;
+        _fov = fov;
+    }
+    
+    return self;
+}
+
 - (PLRay *)rayToPixelX:(int)x y:(int)y
 {
     // Hardcode dimensions for now, TODO: un-hardcode

@@ -25,67 +25,51 @@
     return self;
 }
 
-- (id) initFromArray:(float [3])ary
+- (id) initFromArray:(NSArray *)ary
 {
-    return [self initWithX:ary[0] y:ary[1] z:ary[2]];
-}
-
-- (float[3])toArray
-{
-    return (float[3]){_x, _y, _z};
+    return [self initWithX:[ary[0] floatValue] y:[ary[1] floatValue] z:[ary[2] floatValue]];
 }
 
 #pragma mark Operations
 
 - (float)dotProduct:(PLVector *)other
 {
-    return cblas_sdot(3, [self toArray], 1, [other toArray], 1);
+    float o[3] = {other.x, other.y, other.z};
+    float s[3] = {_x, _y, _z};
+    
+    return cblas_sdot(3, s, 1, o, 1);
 }
 
 - (PLVector *)add:(PLVector *)other
 {
-    float ret[3] = {_x, _y, _z};
-    
-    ret[0] += other.x;
-    ret[1] += other.y;
-    ret[2] += other.z;
+    NSArray *ret = @[@(_x + other.x), @(_y + other.y), @(_z + other.z)];
     
     return [[PLVector alloc] initFromArray:ret];
 }
 
 - (PLVector *)subtract:(PLVector *)other
 {
-    float ret[3] = {_x, _y, _z};
-    
-    ret[0] -= other.x;
-    ret[1] -= other.y;
-    ret[2] -= other.z;
+    NSArray *ret = @[@(_x - other.x), @(_y - other.y), @(_z - other.z)];
     
     return [[PLVector alloc] initFromArray:ret];
 }
 
-- (PLVector *)multiply:(int)mult {
-    float ret[3] = {_x, _y, _z};
+- (PLVector *)multiply:(int)mult
+{
+    float s[3] = {_x, _y, _z};
     
-    ret[0] *= mult;
-    ret[1] *= mult;
-    ret[2] *= mult;
+    cblas_sscal(3, mult, s, 1);
     
-    return [[PLVector alloc] initFromArray:ret];
+    return [[PLVector alloc] initWithX:s[0] y:s[1] z:s[2]];
 }
 
 - (PLVector *)normalize
 {
-    float ary[3] = {_x, _y, _z};    // TODO why not float ary[] = [self toArray]
-    float sum;
+    float s[3] = {_x, _y, _z};
     
-    sum = ary[0] + ary[1] + ary[2];
+    cblas_sscal(3, 1.0 / cblas_snrm2(3, s, 1), s, 1);
     
-    ary[0] /= sum;
-    ary[1] /= sum;
-    ary[2] /= sum;
-    
-    return [[PLVector alloc] initFromArray:ary];
+    return [[PLVector alloc] initWithX:s[0] y:s[1] z:s[2]];
 }
 
 - (PLVector *)negate
@@ -100,13 +84,14 @@
 
 - (PLVector *)crossProduct:(PLVector *)other
 {
-    float res[3] = {other.x, other.y, other.z};
+    float o[3] = {other.x, other.y, other.z};
+    float s[3] = {_x, _y, _z};
     
     int stride = 1;   // TODO voidpointers = mind full of fuck
     
-    catlas_caxpby(3, &stride, [self toArray], 1, &stride, res, 1);
+    catlas_caxpby(3, &stride, s, 1, &stride, o, 1);
     
-    return [[PLVector alloc] initFromArray:res];
+    return [[PLVector alloc] initWithX:o[0] y:o[1] z:o[2]];
 }
 
 @end

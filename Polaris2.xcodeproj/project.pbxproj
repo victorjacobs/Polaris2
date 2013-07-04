@@ -27,6 +27,8 @@
 		574F23D61778712B0004F075 /* PLDiffuseMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F23D51778712B0004F075 /* PLDiffuseMaterial.m */; };
 		57BAC3F7177BB98000987AD5 /* PLPointLight.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BAC3F6177BB98000987AD5 /* PLPointLight.m */; };
 		57BAC3FA177C4DF500987AD5 /* NSColor+ColorExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BAC3F9177C4DF500987AD5 /* NSColor+ColorExtensions.m */; };
+		57FE3BD9177DEF950078AEB9 /* PLVectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FE3BD8177DEF950078AEB9 /* PLVectorTests.m */; };
+		57FE3BDC177DF00F0078AEB9 /* PLColorExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FE3BDB177DF00F0078AEB9 /* PLColorExtensionsTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,10 @@
 		57BAC3F6177BB98000987AD5 /* PLPointLight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLPointLight.m; sourceTree = "<group>"; };
 		57BAC3F8177C4DF500987AD5 /* NSColor+ColorExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+ColorExtensions.h"; sourceTree = "<group>"; };
 		57BAC3F9177C4DF500987AD5 /* NSColor+ColorExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+ColorExtensions.m"; sourceTree = "<group>"; };
+		57FE3BD7177DEF950078AEB9 /* PLVectorTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLVectorTests.h; sourceTree = "<group>"; };
+		57FE3BD8177DEF950078AEB9 /* PLVectorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLVectorTests.m; sourceTree = "<group>"; };
+		57FE3BDA177DF00F0078AEB9 /* PLColorExtensionsTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLColorExtensionsTests.h; sourceTree = "<group>"; };
+		57FE3BDB177DF00F0078AEB9 /* PLColorExtensionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLColorExtensionsTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +182,10 @@
 				574F23A2177788400004F075 /* Polaris2Tests.h */,
 				574F23A3177788400004F075 /* Polaris2Tests.m */,
 				574F239D177788400004F075 /* Supporting Files */,
+				57FE3BD7177DEF950078AEB9 /* PLVectorTests.h */,
+				57FE3BD8177DEF950078AEB9 /* PLVectorTests.m */,
+				57FE3BDA177DF00F0078AEB9 /* PLColorExtensionsTests.h */,
+				57FE3BDB177DF00F0078AEB9 /* PLColorExtensionsTests.m */,
 			);
 			path = Polaris2Tests;
 			sourceTree = "<group>";
@@ -376,6 +386,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				574F23A4177788400004F075 /* Polaris2Tests.m in Sources */,
+				57FE3BD9177DEF950078AEB9 /* PLVectorTests.m in Sources */,
+				57FE3BDC177DF00F0078AEB9 /* PLColorExtensionsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
